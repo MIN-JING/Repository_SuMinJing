@@ -8,16 +8,27 @@ open class Human(open val name: String) {
 //Property 'name' could be private。
 //val name可以private ?
 
-class Mage(name: String) : Human(name) {
+class Mage(name: String, mana: Int) : Human(name) {
     override fun attack() {
         println("$name use Fireball!")
+    }
+    fun manaVolume() {
+        val mana = 0
+        if (mana < 40){
+            println("$name 's mana is low!")
+        } else {
+            println("$name has enough mana")
+        }
     }
 }
 //因為子類別Mage要從超類別Human繼承name的String宣告，name 需為public，不需在超類別private name。
 
 fun main() {
     Human("Jack").attack()
-    Mage("Rose").attack()
+    Mage("Rose", 43).attack()
+    Mage("Rose", 52).manaVolume()
+
+
 }
 //變數HumanA的錯誤: Local variable name 'HumanA' should start with a lowercase letter.
 //局部變數建議以小寫首字母命名。
