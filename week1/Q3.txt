@@ -19,6 +19,8 @@ val與var的差別在於，val會使指向物件的參考永遠待在變數內�
 
 Long是4種基本整數型態之一(Byte、Short、Int)。Long為64位元，值範圍從 -huge至(huge - 1)。
 
+import kotlin.math.pow
+var array = 1000.0.pow(1)
 val array = Array(6) { 1000.0.pow(it) }
 val units = arrayOf("byte", "KB", "MB", "GB",
 "TB", "PB")
