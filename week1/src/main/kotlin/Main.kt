@@ -8,16 +8,15 @@ open class Human(open val name: String) {
 //Property 'name' could be private。
 //val name可以private ?
 
-class Mage(name: String, mana: Int) : Human(name) {
+class Mage(name: String, private val mana: Boolean) : Human(name) {
     override fun attack() {
         println("$name use Fireball!")
     }
-    fun manaVolume() {
-        val mana = 0
-        if (mana < 40){
-            println("$name 's mana is low!")
+    fun manaTest() {
+        if (!mana){
+            println("$name 's mana is empty!")
         } else {
-            println("$name has enough mana")
+            println("$name has the mana!")
         }
     }
 }
@@ -25,12 +24,10 @@ class Mage(name: String, mana: Int) : Human(name) {
 
 fun main() {
     Human("Jack").attack()
-    Mage("Rose", 43).attack()
-    Mage("Rose", 52).manaVolume()
-
-
+    Mage("Rose", false).attack()
+    Mage("Rose", false).manaTest()
 }
-//變數HumanA的錯誤: Local variable name 'HumanA' should start with a lowercase letter.
+//錯誤: Local variable name 'HumanA' should start with a lowercase letter.
 //局部變數建議以小寫首字母命名。
 //Names of functions, properties and local variables start with a lowercase letter and use camel case and no underscores.
 //函數、屬性、局部變數的名稱使用駝峰式大小寫、無下底線。
