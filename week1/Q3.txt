@@ -1,3 +1,4 @@
+答案為d.
 array 會被 array.withIndex()使用，輸出至value，接著做toLong()將數值轉換成Long。
 並會跟 bytes字串拼在一起，所以各種位元換算到bytes的1、1000、1000000等數值皆是參照array陣列而來。
 
@@ -8,7 +9,7 @@ b. val array = {100}
 宣告array有一個項目100。array的值無法達到輸出結果。
 
 c. val array = Array(6) { 1000.0.pow(10) }
-
+最後輸出結果需要隨著i在array.withIndex()來變動，pow(10)將會使Array[1] ~ Array[6]
 
 d. val array = Array(6) { 1000.0.pow(it) }
  
