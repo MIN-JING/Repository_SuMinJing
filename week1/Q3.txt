@@ -1,0 +1,25 @@
+array 會被 array.withIndex()使用，輸出至value，接著做toLong()將數值轉換成Long。
+並會跟 bytes字串拼在一起，所以各種位元換算到bytes的1、1000、1000000等數值皆是參照array陣列而來。
+
+a. val array = new Array(6)
+宣告array為大小6的陣列，但new在變數宣告無效果。
+
+b. val array = {100}
+宣告array有一個項目100。array的值無法達到輸出結果。
+
+c. val array = Array(6) { 1000.0.pow(10) }
+
+
+d. val array = Array(6) { 1000.0.pow(it) }
+ 
+val與var的差別在於，val會使指向物件的參考永遠待在變數內。
+但使用var，可以指派別的值給變數。
+
+Long是4種基本整數型態之一(Byte、Short、Int)。Long為64位元，值範圍從 -huge至(huge - 1)。
+
+val array = Array(6) { 1000.0.pow(10) }
+val units = arrayOf("byte", "KB", "MB", "GB",
+"TB", "PB")
+for ((i, value) in array.withIndex()) {
+println("1 ${units[i]} = ${value.toLong()} bytes\n")
+}
