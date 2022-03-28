@@ -49,3 +49,8 @@ git diff 2c3ec26 79163ee -- ./week1/src/main/kotlin/Main.Kt
 git add .
 git commit -m "add a flag for testing mana volume"
 git push assignment master
+git add .
+git add .
+git commit -m "add a variable :mana for Boolean type, manaTest function"
+git push assignment master
+git pull assignment master
