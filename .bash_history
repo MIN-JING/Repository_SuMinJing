@@ -54,3 +54,8 @@ git add .
 git commit -m "add a variable :mana for Boolean type, manaTest function"
 git push assignment master
 git pull assignment master
+git pull assignment master
+git push assignment master
+git add .
+git commit -m "add Test Project for assignment disscusion"
+git push assignment master

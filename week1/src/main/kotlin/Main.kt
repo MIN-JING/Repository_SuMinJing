@@ -8,12 +8,12 @@ open class Human(open val name: String) {
 //Property 'name' could be private。
 //val name可以private ?
 
-class Mage(name: String, private val mana: Boolean) : Human(name) {
+class Mage(name: String, private val hasMana: Boolean) : Human(name) {
     override fun attack() {
         println("$name use Fireball!")
     }
     fun manaTest() {
-        if (!mana){
+        if (!hasMana){
             println("$name 's mana is empty!")
         } else {
             println("$name has the mana!")
