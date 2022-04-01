@@ -131,3 +131,32 @@ cd ~/
 git add .
 git push assegnment master
 git push assignment master
+git add .
+git push assignment master
+git commit -m "add a TEST text"
+git push assignment master
+git rm --cached week2/andfun-kotlin-android-trivia
+git commit -m "remove week2/andfun-kotlin-android-trivia gitlink"
+git push assignment master
+add .
+git add .
+$ git rm --cached week2/andfun-kotlin-android-trivia
+git rm --cached week2/andfun-kotlin-android-trivia
+git rm --cached -f week2/andfun-kotlin-android-trivia
+git status
+git add week2/andfun-kotlin-android-trivia/
+git rm --cached week2/andfun-kotlin-android-trivia
+git rm --cached -f week2/andfun-kotlin-android-trivia
+git status
+cd ~/
+git status
+git add .
+git rm --cached -f week2/andfun-kotlin-android-trivia
+git status
+dir
+.git
+add .
+git add .
+git commit -m "remove cached for andfun-kotlin-android-trivia"
+git push assignment master
+git log
