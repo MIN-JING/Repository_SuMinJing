@@ -1,0 +1,3 @@
+[submodule "week2"]
+	path = week2
+	url = https://github.com/udacity/andfun-kotlin-android-trivia.git
