@@ -59,3 +59,6 @@ git push assignment master
 git add .
 git commit -m "add Test Project for assignment disscusion"
 git push assignment master
+git add .
+git commit -m "change property name from mana to hasMana"
+git push assignment master
