@@ -160,3 +160,31 @@ git add .
 git commit -m "remove cached for andfun-kotlin-android-trivia"
 git push assignment master
 git log
+git status
+git commit -m "delete andfun-kotlin project"
+git push assignment master
+git add .
+git commit -m "delete andfun-kotlin project"
+git push assignment master
+dir
+cd /week2
+cd~/week2
+git clone https://github.com/udacity/andfun-kotlin-android-trivia.git week2
+git log
+cd week2
+git log
+cd .
+cd .~
+cd ~/
+git add .
+git status
+git submodule add https://github.com/udacity/andfun-kotlin-android-trivia.git week2
+git commit -m "delete andfun project"
+git submodule add https://github.com/udacity/andfun-kotlin-android-trivia.git week2
+git rm -cached week2
+git rm --cached week2
+git submodule add https://github.com/udacity/andfun-kotlin-android-trivia.git week2
+git status
+git add .
+git commit -m "add submodule andfun kotlin project"
+git push assignment master
