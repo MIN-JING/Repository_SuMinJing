@@ -188,3 +188,78 @@ git status
 git add .
 git commit -m "add submodule andfun kotlin project"
 git push assignment master
+cd week2
+git checkout
+git status
+git log
+git  status
+git branch
+git checkout 8395816ced0cce51d3da517f4c098f6a70a77a58
+git add .
+git commit -m "set gradle environment, and add a screenshot pic"
+git push
+git push origin HEAD:week2
+git branch
+git branch temp-week2
+git checkout master
+git merge temp-week2
+git status
+git merge --abort
+cd ~/week2
+git add .
+cd .~
+cd .
+cd
+git status
+git add .
+git commit -m "update environment"
+git status
+git push
+git push assegnment master
+git push assignment master
+git submodule denit reference/week2
+git submodule denit reference/week2
+git submodule deinit reference/week2
+git submodule deinit ~/week2
+git submodule deinit week2
+git submodule deinit ~/week2/
+git submodule deinit -f week2
+git add .gitmodules
+git rm --cached week2
+rm -rf .git/modules/week2
+git commit -m "remove submodule"
+rm -rf week2
+git push assignment master
+git clone https://github.com/udacity/andfun-kotlin-android-trivia.git week2
+cd week2
+git log
+git checkout c603e916c6dc2d7f73e3e9f1eaa03d97381ae374
+git add .
+git checkout
+git status
+git branch
+git commit -m "clone project and return to Step.11"
+cd
+git checkout master
+git branch
+cd ~/week2
+git branch
+git checkout master
+git branch temp a43baa1
+git checkout master
+git merge temp
+git branch -d temp
+cd
+git status
+add .
+git add .
+git rm --cached week2
+git rm --cached -f week2
+git add .
+git commit -m "delete week2 .git folder"
+git push assignment master
+git rm -r --cached week2
+git commit -m "delete week2"
+git push assignment master
+git -rm week2
+git rm week2
