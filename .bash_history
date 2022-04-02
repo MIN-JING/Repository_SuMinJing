@@ -263,3 +263,7 @@ git commit -m "delete week2"
 git push assignment master
 git -rm week2
 git rm week2
+git add .
+git commit -m "delete week2 folder"
+git push assignment master
+ls
