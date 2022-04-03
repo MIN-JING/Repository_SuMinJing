@@ -36,4 +36,28 @@
     <string name="sharing_not_available">Sharing Not Available</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <string name="name">SU MIN JING</string>
+    <string name="yellow_star">Yellow Star</string>
+    <string name="bio">Hi, my name is SU MIN JING.
+    \n\n I’m currently learning Kotlin.
+    \n\n With 4 years of professional experience and a master degree in finance,
+    \n   I am passionate to continue developing my career in the field of finance.
+    \n\n My working experience ranges from OTC trading, funds and ILP referral,
+    \n   to customer relationship management.
+    \n\n I possess excellent communication skills and am detail-oriented.
+    \n\n Furthermore, I have been exploring my full potentials through self-learning.
+    \n\n Focus especially on overseas TIFs, and the utilization of R language to analyze the market and products.
+    \n\n Now, I am ready for new challenges with Android developer!
+    \n\n How to reach me : www.linkedin.com/in/su-min-jing \n\n</string>
+    <string name="what_is_your_nickname">What is your Nickname?</string>
+    <string name="done">Done</string>
+    <string name="self_pic_describe">Self Pictrue</string>
+    <string name="text_button_name">Name</string>
+    <string name="text_botton_nickname">Nick Name</string>
+    <string name="text_button_aboutme">About Me</string>
+    <string name="text_nickname">Jim</string>
+
 </resources>
