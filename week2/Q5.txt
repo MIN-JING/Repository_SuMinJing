@@ -1,0 +1,25 @@
+5. What are Value Type variables? List out the Value Type variables you know.
+
+Value Type被用來描述資料數據類型，與 Reference Type有所區分。
+Kotlin語言可經編譯後與Java程式碼相互運作，故參考Java項下的區分。
+
+
+Value Type的變數有整數(Integer)、浮點數(Floating-point)、字元(Characters)、布林值(Booleans﻿)。
+
+整數(Integer)
+有Byte、Short、Int、Long類型。
+
+浮點數(Floating-point)
+有Float、Double類型。
+
+字元(Characters)
+單一字元數據以單引號表示，例 '1'。如果字元變數的值是數字，可使用digitToInt()轉換為整數類型。
+
+布林值(Booleans﻿)
+表示兩個值: true 或 false。也可以作null宣告。
+
+
+
+https://kotlinlang.org/docs/basic-types.html
+
+https://en.wikipedia.org/wiki/Value_type_and_reference_type

@@ -1,0 +1,39 @@
+2. How to split a string in Android? Explain your understanding, and even better to attach
+some sample code.
+
+
+split() 使用指定分隔符號來拆解字串，有3個參數，
+delimiters - 1個或多個分隔符號。
+ignoreCase - true:當配適分隔符號時忽略字串大小寫，預設為false
+limit - 加上額外條件，如 Int=0。
+
+例如，指定用符號"="、"-"來拆解"Kotlin.com = Be Kotlineer - Be Simple - Be Connective"整段字串。
+
+fun main() {
+   val str = "Kotlin.com = Be Kotlineer - Be Simple - Be Connective"
+   println(str.split(" = "," - ")) 
+}
+
+
+Output
+
+[Kotlin.com, Be Kotlineer, Be Simple, Be Connective]
+
+
+
+
+substringAfter() 傳為第一次出現分隔符號後的子字串。
+
+例如，取出在第一次出現"?"後的字串。即Everything?之後的42。
+
+fun main() {
+   val input = "What is the answer to the Ultimate Question of Life, the Universe, and Everything? 42"
+   println(input.substringAfter("?"))
+}
+
+
+Output
+42
+
+
+https://kotlinlang.org/docs/java-to-kotlin-idioms-strings.html?q=arraylist#take-a-substring

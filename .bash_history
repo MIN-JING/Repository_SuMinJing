@@ -267,3 +267,34 @@ git add .
 git commit -m "delete week2 folder"
 git push assignment master
 ls
+dir
+cd
+pwd
+git clone https://github.com/udacity/andfun-kotlin-android-trivia.git week2
+cd week2
+git log
+git checkout 920456b59e8ca1816c503e424c22bafc8c8bce97
+git branch temp
+branch
+git branch
+cd .
+cd ~
+git checkout master
+git merge temp
+cd week2
+git add .
+cd ~
+git add .
+git rm --cached week2
+git rm --cached -f week2
+git status
+git add .
+git status
+branch
+git branch
+git commit -m "add clone project"
+git push assignment master
+git log
+git status
+git commit -m "add a self pic"
+git push assignment master

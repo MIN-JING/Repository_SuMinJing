@@ -1,0 +1,38 @@
+4. What’s the difference between ArrayList and LinkedList? Try to explain in Mandarin.
+
+ArrayList及LinkedList都是在Java常見的List介面。
+
+ArrayList: 是一種List界面的實現，ArrayList裡元素可以被動態增加、移除。
+
+LinkedList: 是一種基於節點(nodes)鏈建構的線性資料結構。
+每一個節點包含一個值，每個節點亦指向鏈上的下一個節點。
+例: HEAD-NODE-NODE_TAIL-NULL!
+
+
+兩者相似處:
+
+1.均為List界面的實現。
+
+2.它們保持元素的插入順序。
+
+3.均為no-synchronized，透過多個路徑調用物件(instance)是不安全的，可能產生未符預期的結果。
+
+4.迭代(Iterator)、清單迭代(ListIterator)運算在結構改變的情況下會觸發快速失敗(fail-fast)機制。
+  例: 透過迭代來尋遍集合內物件，同時又對集合進行修改(增加add、刪除remove)，便會觸發。
+
+*快速失敗(fail-fast)機制: 當異常發生時，立即停止執行以防止複雜問題的發生。
+
+
+兩者不同處：
+
+1. LinkedList優勢在於插入、增加、移除運算較快。
+
+2. ArrayList裡任何位置元素都可以作增、減處理。
+
+3. LinkedList同時作為List及queue(佇列)，而ArrayList就只是List。
+
+4. LinkedList消耗較多記憶體容量，因為LinkedList的鏈上存有兩個參照(references)。而ArrayList只存資料、索引(index)。
+
+
+https://www.youtube.com/watch?v=Iq9tUK-6J78
+
