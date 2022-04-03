@@ -60,5 +60,6 @@
     <string name="text_button_aboutme">About Me</string>
     <string name="text_nickname">Jim</string>
     <string name="text_menu_profileFragment">Profile</string>
+    <string name="text_button_profile">Profile</string>
 
 </resources>

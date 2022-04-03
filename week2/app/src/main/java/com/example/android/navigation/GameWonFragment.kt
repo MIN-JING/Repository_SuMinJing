@@ -33,7 +33,7 @@ import androidx.navigation.findNavController
 import com.example.android.navigation.databinding.FragmentGameWonBinding
 import android.content.pm.ResolveInfo
 import android.content.pm.PackageManager
-
+import androidx.navigation.Navigation
 
 
 class GameWonFragment : Fragment() {
@@ -46,6 +46,25 @@ class GameWonFragment : Fragment() {
             view.findNavController().navigate(
                     GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
         }
+
+
+        //**Add navigation for button click
+        //binding.profileButton.setOnClickListener { v: View ->
+        //    view.findNavController().navigate(
+        //            view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+        //    )
+
+        //**The complete onClickListener with Navigation using createNavigateOnClickListener
+        //binding.profileButton.setOnClickListener(
+        //Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment))
+
+        //**Use Safe-Argument for clicking profileButton
+        binding.profileButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(
+                    GameWonFragmentDirections.actionGameWonFragmentToProfileFragment())
+        }
+
+
         setHasOptionsMenu(true)
         return binding.root
     }
