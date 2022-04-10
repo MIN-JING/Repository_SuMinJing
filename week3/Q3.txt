@@ -1,0 +1,46 @@
+3. How to use enum in Kotlin? Attach a sample code that uses enum in Kotlin.
+
+
+enum最常見於類別(class)的宣告。
+列舉常數(constant)用逗號(,)分隔。
+函式與常數間要用分號(;)來區隔。
+
+下面例子定義了character屬性，在enum類別裡每個值(姓名)都是一個VoiceActor的實例，
+故每個姓名都會帶有character屬性。
+
+而enum類別裡每個值都可以覆寫它從類別定義式繼承的屬性與函式。
+
+
+
+例子如下：
+
+某部電影有4位聲優幫不同角色配音，他/她們的聲音表現有尖銳、具膽識、嘶啞、深情的特質。
+
+最後用ptintln印出Uchiyama Koki 配音的角色、聲音特質
+
+enum class VoiceActor (val character: String) {
+	
+	Ogata_Megumi("Pure Love Warrior"),
+    
+    	Hanazawa_Kana("Ghost"){
+		override fun speak() = "high-pitched"
+		},
+	
+    	Seki_Tomokazu("Panda"){
+		override fun speak() = "ballsy"
+		},
+	
+    	Uchiyama_Koki("Cute Senior"){
+		override fun speak() = "hoarse"
+		};
+	
+	open fun speak() = "soulful"
+}
+
+fun main (args: Array<String>) {
+	var selectedVoiceActor: VoiceActor
+	selectedVoiceActor = VoiceActor.Uchiyama_Koki
+    	println("The voiceactor is $selectedVoiceActor")
+	println(selectedVoiceActor.character.value)
+	println(selectedVoiceActor.speak())
+}

@@ -1,0 +1,30 @@
+2. Try to explain what enum is and why we use them.
+
+列舉(enum)最常見於類別(class)的宣告，可幫變數指定對它來說有效的值。
+enum類別的每一個值都是一個常數。每一個enum常數都是一個enum類別的實例。
+
+
+使用enum可以避免因傳遞無效實例(instance)而發生的錯誤，並記錄可供有效使用的值。
+
+
+在使用常數(constance)的例子:
+public void checkDay(int day);
+
+day的索引值要從0還是1開始？ 而且容易被給與超過7或負數的數值。
+這些數值是正確的整數數值，但對day是無意義的。
+
+如果先用enum宣告Days只有Sunday, Monday...等，就能避免上述錯誤。
+public void checkDay(Days day);
+
+
+
+
+Lesson 5, ep 26
+
+https://kotlinlang.org/docs/enum-classes.html
+
+https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.9
+
+http://net-informations.com/java/basics/enum.htm
+
+https://stackoverflow.com/questions/4709175/what-are-enums-and-why-are-they-useful

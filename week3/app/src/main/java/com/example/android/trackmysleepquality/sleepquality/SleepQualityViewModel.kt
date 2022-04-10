@@ -19,6 +19,7 @@ package com.example.android.trackmysleepquality.sleepquality
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.android.trackmysleepquality.R
 import com.example.android.trackmysleepquality.database.SleepDatabaseDao
 import kotlinx.coroutines.*
 
@@ -57,6 +58,12 @@ class SleepQualityViewModel(
      * the [Fragment]
      */
     private val _navigateToSleepTracker = MutableLiveData<Boolean?>()
+
+
+//    // The current sleepInfo
+//    private val _sleepInfo = MutableLiveData<String>()
+//    val sleepInfo : LiveData<String>
+//        get() = _sleepInfo
 
     /**
      * When true immediately navigate back to the [SleepTrackerFragment]
@@ -97,6 +104,19 @@ class SleepQualityViewModel(
             }
 
             // Setting this state variable to true will alert the observer and trigger navigation.
+            _navigateToSleepTracker.value = true
+        }
+    }
+
+    fun onSetSleepInfo(info: String) {
+        uiScope.launch {
+            withContext(Dispatchers.IO) {
+                val tonight = database.get(sleepNightKey) ?: return@withContext
+
+                tonight.sleepInfo = R.id.text_sleepInfo.toString()
+                database.update(tonight)
+            }
+
             _navigateToSleepTracker.value = true
         }
     }
