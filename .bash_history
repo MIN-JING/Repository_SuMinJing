@@ -298,3 +298,29 @@ git log
 git status
 git commit -m "add a self pic"
 git push assignment master
+git add .
+git status
+git commit -m " add Q1 to Q6, and screenshot pic"
+git push assignment master
+git add .
+git commit -m "Add ProfileFragment"
+git push assignment master
+git add .
+git commit -m "Add a Menu(Uppon-right) for ProfileFragment"
+git log
+git push assignment master
+git add .
+git commit -m "Add Safe-Argument for clicking profileButton"
+git push assignment master
+git clone https://github.com/udacity/andfun-kotlin-dessert-pusher.git week3
+git rm week3
+git rm /week3/
+git rm /week3
+cd
+kir
+dir
+git rm -r week3
+git rm -r /week3
+git rm -r --cached week3
+git rm -r --cached /week3
+dir

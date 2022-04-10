@@ -37,8 +37,11 @@ import androidx.navigation.Navigation
 
 
 class GameWonFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
         val binding: FragmentGameWonBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_game_won, container, false)
@@ -47,18 +50,6 @@ class GameWonFragment : Fragment() {
                     GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
         }
 
-
-        //**Add navigation for button click
-        //binding.profileButton.setOnClickListener { v: View ->
-        //    view.findNavController().navigate(
-        //            view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
-        //    )
-
-        //**The complete onClickListener with Navigation using createNavigateOnClickListener
-        //binding.profileButton.setOnClickListener(
-        //Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment))
-
-        //**Use Safe-Argument for clicking profileButton
         binding.profileButton.setOnClickListener { view: View ->
             view.findNavController().navigate(
                     GameWonFragmentDirections.actionGameWonFragmentToProfileFragment())
@@ -69,9 +60,18 @@ class GameWonFragment : Fragment() {
         return binding.root
     }
 
+
+    //private fun getShareIntent() : Intent {
+    //        val args = GameWonFragmentArgs.fromBundle(arguments!!)
+    //        return ShareCompat.IntentBuilder.from(activity)
+    //                .setText(getString(R.string.share_success_text, args.numCorrect, args.numQuestions))
+    //                .setType("text/plain")
+    //                .intent
+    //    }
+    //
     private fun getShareIntent() : Intent {
-        val args = GameWonFragmentArgs.fromBundle(arguments!!)
-        return ShareCompat.IntentBuilder.from(activity)
+        val args = GameWonFragmentArgs.fromBundle(requireArguments())
+        return ShareCompat.IntentBuilder(requireActivity())
                 .setText(getString(R.string.share_success_text, args.numCorrect, args.numQuestions))
                 .setType("text/plain")
                 .intent
@@ -81,18 +81,18 @@ class GameWonFragment : Fragment() {
         startActivity(getShareIntent())
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.winner_menu, menu)
+        inflater.inflate(R.menu.winner_menu, menu)
         // check if the activity resolves
-        if (null == getShareIntent().resolveActivity(activity!!.packageManager)) {
+        if (null == getShareIntent().resolveActivity(requireActivity().packageManager)) {
             // hide the menu item if it doesn't resolve
-            menu?.findItem(R.id.share)?.setVisible(false)
+            menu.findItem(R.id.share)?.setVisible(false)
         }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item!!.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
             R.id.share -> shareSuccess()
         }
         return super.onOptionsItemSelected(item)
