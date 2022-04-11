@@ -23,12 +23,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.android.trackmysleepquality.R
 import com.example.android.trackmysleepquality.database.SleepDatabase
 import com.example.android.trackmysleepquality.databinding.FragmentSleepQualityBinding
-import kotlinx.android.synthetic.main.fragment_sleep_quality.*
 
 /**
  * Fragment that displays a list of clickable icons,
@@ -60,43 +59,18 @@ class SleepQualityFragment : Fragment() {
 
         // Get a reference to the ViewModel associated with this fragment.
         val sleepQualityViewModel =
-                ViewModelProviders.of(
+                ViewModelProvider(
                         this, viewModelFactory).get(SleepQualityViewModel::class.java)
 
         // To use the View Model with data binding, you have to explicitly
         // give the binding object a reference to it.
+
+        //binding.lifecycleOwner = viewLifecycleOwner
+
         binding.sleepQualityViewModel = sleepQualityViewModel
 
-
-
-
-//        fun addSleepInfo(view: View) {
-//            binding.apply {
-//                // Set the text for nicknameText to the value in nicknameEdit.
-//                sleepInfo = textSleepInfo.toString()
-//                // Invalidate all binding expressions and request a new rebind to refresh UI
-//                invalidateAll()
-//                // Change which views are visible.
-//                // Remove the EditText.
-//                // With GONE they are invisible and do not occupy space.
-//                textSleepInfo.visibility = View.GONE
-//
-//            }
-//            // Hide the keyboard.
-//            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-//            imm.hideSoftInputFromWindow(view.windowToken, 0)
-//        }
-
-// xml上的6個ImageView都有android:onClick屬性，去執行onSetSleepQuality來更新database。
-//
-//        qualityOneImage.setOnClickListener{
-//
-//            textSleepInfo.text.toString()
-//        }
-
-
         // Add an Observer to the state variable for Navigating when a Quality icon is tapped.
-        sleepQualityViewModel.navigateToSleepTracker.observe(this, Observer {
+        sleepQualityViewModel.navigateToSleepTracker.observe(viewLifecycleOwner, Observer {
             if (it == true) { // Observed state is true.
                 this.findNavController().navigate(
                         SleepQualityFragmentDirections.actionSleepQualityFragmentToSleepTrackerFragment())

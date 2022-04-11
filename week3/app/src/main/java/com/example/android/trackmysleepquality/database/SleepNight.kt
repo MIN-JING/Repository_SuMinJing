@@ -34,7 +34,9 @@ data class SleepNight(
         @ColumnInfo(name = "quality_rating")
         var sleepQuality: Int = -1,
 
-        //add new column: sleep_info, must separate front variable by comma
+        //add new column: sleep_info, must separate front ColumnInfo variable by comma
+        //因為在資料庫增加新欄位，原則上需做Migration將資料庫版本合併。
+        //本次在SleepDatabase.kt以修改版本編號version = 2便宜行事。
         @ColumnInfo(name = "sleep_info")
         var sleepInfo: String = ""
 )
