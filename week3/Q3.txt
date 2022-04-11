@@ -18,29 +18,30 @@ enum最常見於類別(class)的宣告。
 
 最後用ptintln印出Uchiyama Koki 配音的角色、聲音特質
 
+
 enum class VoiceActor (val character: String) {
-	
-	Ogata_Megumi("Pure Love Warrior"),
-    
-    	Hanazawa_Kana("Ghost"){
-		override fun speak() = "high-pitched"
-		},
-	
-    	Seki_Tomokazu("Panda"){
-		override fun speak() = "ballsy"
-		},
-	
-    	Uchiyama_Koki("Cute Senior"){
-		override fun speak() = "hoarse"
-		};
-	
-	open fun speak() = "soulful"
+
+    OgataMegumi("pure Love Warrior"),
+
+    HanazawaKana("ghost"){
+        override fun speak() = "high-pitched"
+    },
+
+    SekiTomokazu("panda"){
+        override fun speak() = "ballsy"
+    },
+
+    UchiyamaKoki("cute Senior"){
+        override fun speak() = "hoarse"
+    };
+
+    open fun speak() = "soulful"
 }
 
-fun main (args: Array<String>) {
-	var selectedVoiceActor: VoiceActor
-	selectedVoiceActor = VoiceActor.Uchiyama_Koki
-    	println("The voiceactor is $selectedVoiceActor")
-	println(selectedVoiceActor.character.value)
-	println(selectedVoiceActor.speak())
+fun main() {
+
+    val selectedVoiceActor: VoiceActor = VoiceActor.UchiyamaKoki
+    println("The voice-actor is $selectedVoiceActor.")
+    println("Who act ${selectedVoiceActor.character}.")
+    println("The sound is ${selectedVoiceActor.speak()}.")
 }

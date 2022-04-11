@@ -89,9 +89,9 @@ class SleepQualityFragment : Fragment() {
 
 // xml上的6個ImageView都有android:onClick屬性，去執行onSetSleepQuality來更新database。
 //
-//        binding.qualityOneImage.setOnClickListener{
+//        qualityOneImage.setOnClickListener{
 //
-//            binding.textSleepInfo.text.toString()
+//            textSleepInfo.text.toString()
 //        }
 
 

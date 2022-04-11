@@ -324,3 +324,17 @@ git rm -r /week3
 git rm -r --cached week3
 git rm -r --cached /week3
 dir
+git fetch assignment
+git clone https://github.com/udacity/andfun-kotlin-sleep-tracker.git week3
+dir
+cd week3
+git log
+git checkout b48d6083c6374d45e681b2b740a3686163beb8b5
+git commit -m "clone sleep tracker project"
+cd ~/
+git add .
+git commit -m "clone sleep tracker project"
+git add .
+dir
+git commit -m "add Q1 to Q5, and screenshot"
+git push assignment master
