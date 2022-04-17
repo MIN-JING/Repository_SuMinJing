@@ -58,5 +58,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:marsApiStatus="@{viewModel.status}" />
 
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
