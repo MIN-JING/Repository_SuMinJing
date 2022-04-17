@@ -1,0 +1,79 @@
+2. Here are the 7 important lifecycle methods of an Activity:
+i. onCreate()
+ii. onStart()
+iii. onResume()
+iv. onPause()
+v. onStop()
+vi. onDestroy()
+Try to explain when they are called during the lifecycle of Activity.
+
+
+
+
+i. onCreate()
+當activity第一次啟動時。
+
+例: 當dessertsSold = 0 在onCreate()裡宣告時，我離開activity再返回，
+甜點售出數量會與activity離開前相同。我點擊甜點，數量會接續增加。
+
+這階段應該要:
+inflate activity的UI，使用findViewById 或 databinding。
+初始化變數。
+
+
+
+ii. onStart()
+當activity要可見(visible)時。
+離開activity再返回時會呼叫onStart()。
+
+例: 當dessertsSold = 0 在onStart()裡宣告時，我離開activity再返回，
+甜點售出數量會歸零。
+
+
+
+iii. onResume()
+當activity得到關注(focus)時。
+
+例: 我從展開的分享選單(藍芽、複製至剪貼板、e-mail等)，回到App畫面，
+此時App得到focus，便呼叫onResume()。
+接著我可以與App藉由acticity有互動-點擊甜點增加分數。
+
+
+
+iv. onPause()
+當activity失去關注(focus)時。
+即從UI繪製中彈出，保持它的輕量化。
+
+例: 使用App中，我點擊分享連結跳出分享選單(藍芽、複製至剪貼板、e-mail等)，
+App畫面在前景(foreground)有部份顯示，此時App不在focus之中，即我與App間沒互動。
+使用App中有來電、開啟多工視窗時，也是呼叫onPause()的時機。
+
+這階段應該要:
+保持快速執行，完成後才顯示下一個activity。
+
+
+
+v. onStop()
+當activity從螢幕上消失時。
+
+這階段應該要:
+接續(永久保存)資料。
+停止更新UI，否則會浪費資源。
+
+
+
+vi. onDestroy()
+當activity完全消失時。或在activity調用finish()時。
+
+例: 按下手機返回鍵。
+
+這階段應該要:
+卸除、釋放與activity有關的資源，以避免記憶體流失。
+
+
+
+
+Lesson 4, ep 6~9
+
+https://developer.android.com/guide/components/activities/activity-lifecycle
+

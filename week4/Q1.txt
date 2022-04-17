@@ -1,0 +1,45 @@
+1. What is Polymorphism Try to explain in Mandarin.
+
+多型(Polymorphism)是指用同一個操作介面來操作不同物件實例。
+也就是藉由不同類別(class)來執行行為(behavior)的一種機制。
+
+這是物件導向程式設計(object-oriented programming)的重要特徵之一。
+多型可以降低對個別物件的依賴程度，增加程式維護的彈性。
+
+例如，人類、貓都有走路的行為，但被不同方式去實現。人類用兩隻腳，貓用4隻腳。
+
+在程式語言，常利用sealed class、interface來操作多型。
+
+
+下例將資料單位所有的子類別在單一程序文件中定義。
+讓編譯器瞭解這些子類別，且不會被其他程式段落加上新的型態定義。進而降低recycleview的adapter出錯機率。
+
+範例中定義了：
+子類別SleepNightItem來得到單一ID值。
+物件Header，因為它沒有實際值。即Header只會有一個實例(instance)。
+抽像變數id，宣告為Long型態。
+
+
+sealed class DataItem {
+
+     data class SleepNightItem(val sleepNight: SleepNight): DataItem() {
+         override val id = sleepNight.nightId
+     }
+
+     object Header: DataItem() {
+         override val id = Long.MIN_VALUE
+     }
+
+     abstract val id: Long
+ }
+
+
+
+
+Lesson 7, ep 23
+
+https://caterpillar.gitbooks.io/javase6tutorial/content/c8_2.html
+
+https://www.geeksforgeeks.org/polymorphism-in-kotlin/
+
+https://dev.to/nadirbasalamah/kotlin-tutorial-9-polymorphism-43l5

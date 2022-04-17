@@ -1,0 +1,20 @@
+3. What is the Android Jetpack?
+
+Android Jetpack是一套幫助開發者撰寫高品質應用程式更加容易的程式庫、工具、指引。
+可以降低樣板程式碼的撰寫，而專注在開發項目上。
+Google Library的一部份是來自Jetpack.
+
+優點:
+
+1.提供最佳開發實務：Jetpack程式庫使用向下相容(backwards-compatibility)，可以降低程序當掉、記憶體流失(memory leaks)。
+
+2.消除樣板代碼：Jetpack程式庫管理了繁瑣活動，例如背景程序、navigation、lifecycle。
+
+3.減少碎片化：使用Jetpack程式庫可以延續在Android跨版本、裝置平台上的開發工作。
+
+
+Lesson 8, ep 4
+
+https://developer.android.com/jetpack
+
+https://android.googlesource.com/platform/frameworks/support/+/androidx-master-dev/README.md
