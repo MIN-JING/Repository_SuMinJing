@@ -338,3 +338,10 @@ git add .
 dir
 git commit -m "add Q1 to Q5, and screenshot"
 git push assignment master
+git add .
+git commit -m "update Q3 by IntelliJ IDEA checking"
+git push assignment master
+git add .
+git commit -m "update solution for LiveData and Databinding"
+git push assignment master
+git clone https://github.com/udacity/andfun-kotlin-mars-real-estate.git week4
