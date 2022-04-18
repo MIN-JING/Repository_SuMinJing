@@ -31,7 +31,7 @@ enum class MarsApiStatus { LOADING, ERROR, DONE }
 /**
  * The [ViewModel] that is attached to the [FullviewFragment].
  */
-class FullviewViewModel(marsProperty: MarsProperty, app: Application) : ViewModel() {
+class FullviewViewModel(marsProperty: MarsProperty, app: Application) : AndroidViewModel(app) {
 
     // The internal MutableLiveData that stores the status of the most recent request
     private val _status = MutableLiveData<MarsApiStatus>()
@@ -48,12 +48,12 @@ class FullviewViewModel(marsProperty: MarsProperty, app: Application) : ViewMode
     val properties: LiveData<List<MarsProperty>>
         get() = _properties
 
-    // Internally, we use a MutableLiveData to handle navigation to the selected property
-    private val _navigateToSelectedProperty = MutableLiveData<MarsProperty>()
-
-    // The external immutable LiveData for the navigation property
-    val navigateToSelectedProperty: LiveData<MarsProperty>
-        get() = _navigateToSelectedProperty
+//    // Internally, we use a MutableLiveData to handle navigation to the selected property
+//    private val _navigateToSelectedProperty = MutableLiveData<MarsProperty>()
+//
+//    // The external immutable LiveData for the navigation property
+//    val navigateToSelectedProperty: LiveData<MarsProperty>
+//        get() = _navigateToSelectedProperty
 
 
 
@@ -83,23 +83,22 @@ class FullviewViewModel(marsProperty: MarsProperty, app: Application) : ViewMode
         }
     }
 
-    /**
-     */
 
-    /**
-     * When the property is clicked, set the [_navigateToSelectedProperty] [MutableLiveData]
-     * @param marsProperty The [MarsProperty] that was clicked on.
-     */
-    fun displayPropertyDetails(marsProperty: MarsProperty) {
-        _navigateToSelectedProperty.value = marsProperty
-    }
 
-    /**
-     * After the navigation has taken place, make sure navigateToSelectedProperty is set to null
-     */
-    fun displayPropertyDetailsComplete() {
-        _navigateToSelectedProperty.value = null
-    }
+//    /**
+//     * When the property is clicked, set the [_navigateToSelectedProperty] [MutableLiveData]
+//     * @param marsProperty The [MarsProperty] that was clicked on.
+//     */
+//    fun displayPropertyDetails(marsProperty: MarsProperty) {
+//        _navigateToSelectedProperty.value = marsProperty
+//    }
+//
+//    /**
+//     * After the navigation has taken place, make sure navigateToSelectedProperty is set to null
+//     */
+//    fun displayPropertyDetailsComplete() {
+//        _navigateToSelectedProperty.value = null
+//    }
 
     /**
      * Updates the data set filter for the web services by querying the data with the new filter
@@ -109,7 +108,6 @@ class FullviewViewModel(marsProperty: MarsProperty, app: Application) : ViewMode
     fun updateFilter(filter: MarsApiFilter) {
         getMarsRealEstateProperties(filter)
     }
-
 
 
 
@@ -137,8 +135,7 @@ class FullviewViewModel(marsProperty: MarsProperty, app: Application) : ViewMode
     // The displayPropertyType formatted Transformation Map LiveData, which displays the
     // "For Rent/Sale" String
     val displayPropertyType = Transformations.map(selectedProperty) {
-        app.applicationContext.getString(
-            R.string.display_type,
+        app.applicationContext.getString(R.string.display_type,
             app.applicationContext.getString(
                 when(it.isRental) {
                     true -> R.string.type_rent
