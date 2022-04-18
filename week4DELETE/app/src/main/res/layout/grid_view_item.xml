@@ -25,38 +25,13 @@
             name="property"
             type="com.example.android.marsrealestate.network.MarsProperty" />
     </data>
-
     <ImageView
         android:id="@+id/mars_image"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="170dp"
         android:scaleType="centerCrop"
         android:adjustViewBounds="true"
         android:padding="2dp"
         app:imageUrl="@{property.imgSrcUrl}"
         tools:src="@tools:sample/backgrounds/scenic"/>
-
-    <TextView
-        android:id="@+id/property_type_text"
-        android:layout_width="135dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="16dp"
-        android:text="@{property.type}"
-        android:textColor="#de000000"
-        android:textSize="39sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mars_image"
-        tools:text="To Rent" />
-
-    <TextView
-        android:id="@+id/price_value_text"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="8dp"
-        android:text="@{Double.toString(property.price)}"
-        android:textColor="#de000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/property_type_text"
-        tools:text="$100,000" />
 </layout>

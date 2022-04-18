@@ -62,14 +62,14 @@ class OverviewFragment : Fragment() {
         // Observe the navigateToSelectedProperty LiveData and Navigate when it isn't null
         // After navigating, call displayPropertyDetailsComplete() so that the ViewModel is ready
         // for another navigation event.
-        viewModel.navigateToSelectedProperty.observe(this, Observer {
-            if ( null != it ) {
-                // Must find the NavController from the Fragment
-                this.findNavController().navigate(OverviewFragmentDirections.actionShowDetail(it))
-                // Tell the ViewModel we've made the navigate call to prevent multiple navigation
-                viewModel.displayPropertyDetailsComplete()
-            }
-        })
+//        viewModel.navigateToSelectedProperty.observe(this, Observer {
+//            if ( null != it ) {
+//                // Must find the NavController from the Fragment
+//                this.findNavController().navigate(OverviewFragmentDirections.actionShowDetail(it))
+//                // Tell the ViewModel we've made the navigate call to prevent multiple navigation
+//                viewModel.displayPropertyDetailsComplete()
+//            }
+//        })
 
         setHasOptionsMenu(true)
         return binding.root

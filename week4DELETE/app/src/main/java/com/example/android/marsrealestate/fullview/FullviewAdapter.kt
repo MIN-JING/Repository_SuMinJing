@@ -15,44 +15,48 @@
  *
  */
 
-package com.example.android.marsrealestate.overview
+package com.example.android.marsrealestate.fullview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android.marsrealestate.R
 import com.example.android.marsrealestate.databinding.GridViewItemBinding
+import com.example.android.marsrealestate.databinding.FragmentFullviewBinding
 import com.example.android.marsrealestate.network.MarsProperty
+
 
 /**
  * This class implements a [RecyclerView] [ListAdapter] which uses Data Binding to present [List]
  * data, including computing diffs between lists.
  * @param onClick a lambda that takes the
  */
-class PhotoGridAdapter( val onClickListener: OnClickListener ) :
-        ListAdapter<MarsProperty, PhotoGridAdapter.MarsPropertyViewHolder>(DiffCallback) {
+
+//利用FullviewAdapter.MarsPropertyViewHolder來呈現一個<MarsProperty>物件的list
+//MarsProperty是指data class，有id、type、price、isRental變數，在network package被定義
+//class FullviewAdapter: ListAdapter<MarsProperty, FullviewAdapter.MarsPropertyViewHolder>(DiffCallback) {
+
+class FullviewAdapter: ListAdapter<MarsProperty, RecyclerView.ViewHolder>(DiffCallback) {
+
     /**
      * The MarsPropertyViewHolder constructor takes the binding variable from the associated
      * GridViewItem, which nicely gives it access to the full [MarsProperty] information.
      */
-    class MarsPropertyViewHolder(private var binding: GridViewItemBinding):
+    //創造一個內部類別(inner class): MarsPropertyViewHolder，執行bind()來binding至marsProperty
+    //MarsPropertyViewHolder用來擴展RecyclerView.ViewHolder
+    //原本是binding: GridViewItemBinding 來處理gridview的item
+//    class MarsPropertyViewHolder(private var binding: FragmentFullviewBinding):
+
+    class MarsPropertyViewHolder private constructor(val binding: FragmentFullviewBinding):
             RecyclerView.ViewHolder(binding.root) {
+
         fun bind(marsProperty: MarsProperty) {
-            binding.property = marsProperty
-
-            if (marsProperty.isRental) {
-                binding.propertyTypeText.text = R.string.type_rent.toString()
-                binding.priceValueText.text = R.string.display_price_monthly_rental.toString()
-            } else {
-                binding.propertyTypeText.text = R.string.type_sale.toString()
-                binding.priceValueText.text = R.string.display_price.toString()
-            }
-
+            binding.CCC = XXX
             // This is important, because it forces the data binding to execute immediately,
             // which allows the RecyclerView to make the correct view size measurements
             binding.executePendingBindings()
+            //            binding.viewModel.properties = marsProperty
         }
     }
 
@@ -74,27 +78,29 @@ class PhotoGridAdapter( val onClickListener: OnClickListener ) :
      * Create new [RecyclerView] item views (invoked by the layout manager)
      */
     override fun onCreateViewHolder(parent: ViewGroup,
-                                    viewType: Int): MarsPropertyViewHolder {
-        return MarsPropertyViewHolder(GridViewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+                                    viewType: Int): RecyclerView.ViewHolder {
+        return RecyclerView.ViewHolder(FragmentFullviewBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     /**
      * Replaces the contents of a view (invoked by the layout manager)
      */
-    override fun onBindViewHolder(holder: MarsPropertyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val marsProperty = getItem(position)
-        holder.itemView.setOnClickListener {
-            onClickListener.onClick(marsProperty)
-        }
         holder.bind(marsProperty)
+//        holder.itemView.setOnClickListener {
+//            onClickListener.onClick(marsProperty)
+//        }
+
     }
 
-    /**
-     * Custom listener that handles clicks on [RecyclerView] items.  Passes the [MarsProperty]
-     * associated with the current item to the [onClick] function.
-     * @param clickListener lambda that will be called with the current [MarsProperty]
-     */
-    class OnClickListener(val clickListener: (marsProperty:MarsProperty) -> Unit) {
-        fun onClick(marsProperty:MarsProperty) = clickListener(marsProperty)
-    }
+//    /**
+//     * Custom listener that handles clicks on [RecyclerView] items.  Passes the [MarsProperty]
+//     * associated with the current item to the [onClick] function.
+//     * @param clickListener lambda that will be called with the current [MarsProperty]
+//     */
+//    class OnClickListener(val clickListener: (marsProperty:MarsProperty) -> Unit) {
+//        fun onClick(marsProperty:MarsProperty) = clickListener(marsProperty)
+//    }
+
 }
