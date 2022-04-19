@@ -25,6 +25,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.marsrealestate.R
 import com.example.android.marsrealestate.databinding.GridViewItemBinding
 import com.example.android.marsrealestate.network.MarsProperty
+import android.app.Application
+import android.content.Context
+import android.content.res.Resources
+import android.icu.text.DecimalFormat
+import android.provider.Settings.Global.getString
+import androidx.core.content.res.TypedArrayUtils.getText
+import kotlin.math.absoluteValue
 
 /**
  * This class implements a [RecyclerView] [ListAdapter] which uses Data Binding to present [List]
@@ -39,21 +46,23 @@ class PhotoGridAdapter( val onClickListener: OnClickListener ) :
      */
     class MarsPropertyViewHolder(private var binding: GridViewItemBinding):
             RecyclerView.ViewHolder(binding.root) {
+
         fun bind(marsProperty: MarsProperty) {
             binding.property = marsProperty
 
             if (marsProperty.isRental) {
-                binding.propertyTypeText.text = R.string.type_rent.toString()
-                binding.priceValueText.text = R.string.display_price_monthly_rental.toString()
+                binding.propertyTypeText.text = "For Rent"
+                binding.priceValueText.text = String.format("$%,.0f/month", marsProperty.price)
             } else {
-                binding.propertyTypeText.text = R.string.type_sale.toString()
-                binding.priceValueText.text = R.string.display_price.toString()
+                binding.propertyTypeText.text = "For Sell"
+                binding.priceValueText.text = java.text.DecimalFormat("$#,###").format(marsProperty.price)
             }
 
             // This is important, because it forces the data binding to execute immediately,
             // which allows the RecyclerView to make the correct view size measurements
             binding.executePendingBindings()
         }
+
     }
 
     /**
