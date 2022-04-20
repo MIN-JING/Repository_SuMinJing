@@ -345,3 +345,30 @@ git add .
 git commit -m "update solution for LiveData and Databinding"
 git push assignment master
 git clone https://github.com/udacity/andfun-kotlin-mars-real-estate.git week4
+git add .
+git commit -m "clone Mars project"
+git push assignment master
+git add .
+git commit -m "fix fullview fragment"
+git pull assignment master
+git reflog
+git reset --hard 5848af8 
+git push assignment master
+git add .
+git commit -m "add Q1 to Q4"
+git push assignment master
+git commit -m "review FullviewAdapter.kt"
+git push assignment master
+git add .
+git commit -m "review Adapter"
+git push assignment master
+git add .
+git commit -m "update week4: add textview in grid_item"
+git push assignment master
+dir
+git add .
+git commit -m "update grid_view_item.xml view to constraintlayout"
+git push assignment master
+git add .
+git commit -m "update string format"
+git push assignment master

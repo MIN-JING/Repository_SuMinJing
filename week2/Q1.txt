@@ -1,9 +1,0 @@
-1. What is Inheritance? Try to explain in Mandarin.
-
-繼承，是指運用此宣告將超類別(superclass)的屬性(properties)、函式(function)由子類別繼受。
-也就是從基礎(base)類別創造衍生(derived)類別的過程。
-這可以使程式碼更清晰、容易理解、具擴充性。
-在繼承樹裡，子類別是它的任何超類別，無論子類別有沒有覆寫超類別的函式，透過IS-A測試均為true。
-
-
-https://kotlinlang.org/docs/inline-classes.html#inheritance
